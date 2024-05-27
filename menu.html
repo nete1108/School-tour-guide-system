@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学校参观系统——菜单</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+</head>
+<body>
+    <div>
+        <h1 style="text-align: center;">学校参观系统</h1>
+        <h2 style="text-align: center;">菜单界面</h2>
+    </div>
+    <hr width="80%">
+    <div style="text-align: center;">
+        <table style="position: absolute;left: 40%;">
+            <tr>
+                <td>您是管理员：</td>
+            </tr>
+            <tr>
+                <td><label for="mapinit" class="form-control">地图输入：</label></td>
+                <td><input type="button" value="点击这里进行地图的初始化" class="btn btn-success" onclick="location.href='mapinit.html'"></td>
+            </tr>
+            <tr>
+                <td><label for="mapedit" class="form-control">地图修改：</label></td>
+                <td><input type="button" value="点击这里进行地图的修改" class="btn btn-success" onclick="location.href='mapedit.html'"></td>
+            </tr>
+        </table>
+        <br>
+        <table style="position: absolute; left:30%; margin-top: 100px;">
+            <tr>
+                <td>您是游客：</td>
+            </tr>
+            <tr>
+                <td><label for="shortest_way" class="form-control">两点间的最短路径：</label></td>
+                <td><input type="button" value="点击这里选择两个地点，显示它们之间的最短路径" class="btn btn-success" onclick="location.href='map_lowest_path.html'"></td>
+            </tr>
+            <tr>
+                <td><label for="one_start_point" class="form-control">游览所有地点的方案：</label></td>
+                <td><input type="button" value="点击这里选择一个起点，为您规划一条游览校园所有地点的方案" class="btn btn-success" onclick="location.href='map_BFS_DFS.html'"></td>
+            </tr>
+            <!-- <tr>
+                <td><label for="many_start_points" class="form-control">游览指定地点的方案：</label></td>
+                <td><input type="button" value="点击这里若干个您想要游览的地点，为您规划一条路径最短的方案" class="btn btn-success" onclick="location.href='map_Postman.html'"></td>
+            </tr> -->
+        </table>
+    </div>
+</body>
+</html>

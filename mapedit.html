@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学校参观系统——地图初始化</title>
+    <link rel="stylesheet" href="./mapinit.css">
+    <link rel="stylesheet" href="./leaflet/leaflet.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="./leaflet/leaflet.js"></script>
+    
+</head>
+<body>
+    <div id="map" style="height: 670px; width: 1200px; float: left;"></div>
+    <div style="float: left;">
+        <table>
+
+          <tr>
+            <td><label for="graph_name">请选择您想要修改的地图：</label></td>
+            <td><select name="graph_name" id="graph_name" style="width: 100px; height: 25px;">
+            </select></td>
+            <td><input type="button" value="确定" onclick="show_map()"></td>
+          </tr>
+            <tr>
+                <td><input type="button" value="新增点" onclick="open_add_Modal()" class="btn btn-primary"></td>
+                <td><input type="button" value="新增边" onclick="open_add_edge_Modal()" class="btn btn-primary"></td>
+            </tr>
+            
+            <tr>
+                <td><input type="button" value="删除点" onclick="open_delete_Modal()" class="btn btn-success"></td>
+                 <td><input type="button" value="删除边" onclick="open_delete_edge_Modal()" class="btn btn-success"></td>
+            </tr>
+            <tr>
+              <td><input type="button" value="修改点" onclick="open_edit_Modal()" class="btn btn-warning"></td>
+              <td><input type="button" value="修改边" onclick="open_edit_edge_Modal()" class="btn btn-warning"></td>
+            </tr>
+            <tr><input type="button" value="返回" onclick="location.href='menu.html'"></tr>
+        </table>
+    </div>
+  <!-- 弹窗 -->
+  <!-- 点 -->
+  <!-- 增加 -->
+  <div id="my_add_Modal">
+    <form id="my_add_Form">
+      <label for="add_point">增加点:</label>
+      <input type="text" id="add_point" name="add_point" required><br><br>
+      <input type="submit" value="添加">
+    </form>
+    <button onclick="close_add_Modal()">关闭</button>
+  </div>
+  <!-- 删除 -->
+  <div id="my_delete_Modal">
+    <form id="my_delete_Form">
+      <label for="delete_point">删除点:</label>
+      <input type="text" id="delete_point" name="delete_point" required><br><br>
+      <input type="submit" value="删除">
+    </form>
+    <button onclick="close_delete_Modal()">关闭</button>
+  </div>
+  <!-- 修改 -->
+  <div id="my_edit_Modal">
+    <form id="my_edit_Form">
+      <label for="edit_point">修改点:</label>
+      <input type="text" id="edit_point" name="edit_point" required><br><br>
+      <label for="edit_point">改之后的点:</label>
+      <input type="text" id="edit_finished_point" name="edit_finished_point" required><br><br>
+      <input type="submit" value="修改">
+    </form>
+    <button onclick="close_edit_Modal()">关闭</button>
+  </div>
+  <!-- 边 -->
+  <!-- 增加 -->
+  <div id="my_add_edge_Modal">
+    <form id="my_add_edge_Form">
+      <label for="add_edge">新增边:</label><br>
+      <label for="add_start_point">第一个点：</label>
+      <input type="text" name="add_start_point" id="add_start_point" placeholder="请在此输入边的第一个点"><br>
+      <label for="add_end_point">第二个点：</label>
+      <input type="text" name="add_end_point" id="add_end_point" placeholder="请在此输入边的第二个点"><br>
+      <label for="add_weight">权值：</label>
+      <input type="text" id="add_weight" name="add_weight" required placeholder="请在此输入权值（道路长）"><br>
+      <input type="submit" value="添加">
+    </form>
+    <button onclick="close_add_edge_Modal()">关闭</button>
+  </div>
+  <!-- 删除 -->
+  <div id="my_delete_edge_Modal">
+    <form id="my_delete_edge_Form">
+      <label for="delete_edge">删除边:</label><br>
+      <label for="delete_start_point">第一个点：</label>
+      <input type="text" name="delete_start_point" id="delete_start_point" placeholder="请在此输入边的第一个点"><br>
+      <label for="delete_end_point">第二个点：</label>
+      <input type="text" name="delete_end_point" id="delete_end_point" placeholder="请在此输入边的第二个点"><br>
+      <input type="submit" value="删除">
+    </form>
+    <button onclick="close_delete_edge_Modal()">关闭</button>
+  </div>
+  <!-- 修改 -->
+  <div id="my_edit_edge_Modal">
+    <form id="my_edit_edge_Form">
+      <label for="edit_edge">修改边:</label><br>
+      <label for="edit_start_point">第一个点：</label>
+      <input type="text" name="edit_start_point" id="edit_start_point" placeholder="请在此输入边的第一个点"><br>
+      <label for="edit_end_point">第二个点：</label>
+      <input type="text" name="edit_end_point" id="edit_end_point" placeholder="请在此输入边的第二个点"><br>
+      <label for="edit_weight">修改后的权值（路径长）：</label>
+      <input type="text" id="edit_weight" name="edit_weight" required placeholder="请在此输入权值（道路长）"><br>
+      <input type="submit" value="修改">
+    </form>
+    <button onclick="close_edit_edge_Modal()">关闭</button>
+  </div>
+</body>
+<script src="./jquery_min_3.7.1.js"></script>
+<script src="./mapedit.js"></script>
+</html>

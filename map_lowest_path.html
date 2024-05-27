@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学校参观系统——地图初始化</title>
+    <link rel="stylesheet" href="./mapinit.css">
+    <link rel="stylesheet" href="./leaflet/leaflet.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="./leaflet/leaflet.js"></script>
+    
+</head>
+<body>
+    <div id="map" style="height: 670px; width: 1200px; float: left;"></div>
+    <div style="float: left;">
+        <table>
+
+          <tr>
+            <td><label for="graph_name">请选择地图：</label></td>
+            <td><select name="graph_name" id="graph_name" style="width: 100px; height: 25px;">
+            </select></td>
+            <td><input type="button" value="确定" onclick="show_map()" class="btn btn-primary"></td>
+          </tr>
+            <tr>
+              <td><label for="start_point">请选择任意起点：</label></td>
+              <td><input type="text" name="start_point" id="start_point" placeholder="请输入起点" class="form-control"></td>
+              <td><input type="text" name="end_point" id="end_point" placeholder="请输入终点" class="form-control"></td>
+              <td><input type="button" value="显示两地间最短路径" onclick="show_lowest_path()" class="btn btn-success"></td>
+            </tr>
+            <tr><input type="button" value="返回" onclick="location.href='menu.html'"></tr>
+        </table>
+    </div>
+</body>
+<script src="./jquery_min_3.7.1.js"></script>
+<script src="./map_lowest_path.js"></script>
+</html>

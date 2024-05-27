@@ -1,0 +1,75 @@
+// function init(){
+//     init_point_table();
+//     init_edge_table();
+// }
+
+
+
+
+//基准点
+// var marker_base = L.marker([47, 47], {draggable: false}).addTo(map);
+
+// var customIcon = L.divIcon({
+//     className: 'custom-div-icon',
+//     html: "<div>大门</div>",
+//     iconSize: [100, 40],  // 调整图标大小
+//     iconAnchor: [,]  // 调整图标锚点
+// });
+
+
+// var marker_with_text = L.marker([47, 47], {
+//     icon: customIcon,
+//     interactive: false  // 防止覆盖默认标记的交互
+// }).addTo(map);
+
+// var markerGroup = L.layerGroup([marker_base, marker_with_text]);
+// markerGroup.addTo(map);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // 尝试从本地存储中获取标记的位置
+// var markerPosition = JSON.parse(localStorage.getItem('markerPosition'));
+// var marker = L.marker(markerPosition, { draggable: true }).addTo(map)
+
+
+// // 初始化线
+// var polyline = L.polyline([marker.getLatLng(), marker_base.getLatLng()], { color: 'blue' })
+// .addTo(map);
+
+
+// // 当标记被拖动时更新线的坐标和保存位置到本地存储
+// marker.on('drag', function () {
+//     updatePolyline();
+//     saveMarkerPosition();
+// });
+
+// marker_base.on('drag', function () {
+//     updatePolyline();
+// });
+
+// function updatePolyline() {
+//     // 更新线的坐标为两个标记的坐标
+//     polyline.setLatLngs([marker.getLatLng(), marker_base.getLatLng()]);
+// }
+
+// function saveMarkerPosition() {
+//     // 保存标记的位置到本地存储
+//     localStorage.setItem('markerPosition', JSON.stringify(marker.getLatLng()));
+// }
+
+// // 初始时更新一次线的坐标
+// updatePolyline();
+

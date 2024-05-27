@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学校参观系统——地图初始化</title>
+    <link rel="stylesheet" href="./mapinit.css">
+    <link rel="stylesheet" href="./leaflet/leaflet.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="./leaflet/leaflet.js"></script>
+    
+</head>
+<body>
+    <div id="map" style="height: 670px; width: 1200px; float: left;"></div>
+    <div style="float: left;">
+        <table>
+
+          <tr>
+            <td><label for="graph_name" class="form-label">给你的地图起个名字吧：</label></td>
+            <td><input type="text" name="graph_name" id="graphname" placeholder="这里输入图名" class="form-control"></td>
+          </tr>
+            <tr>
+                <td><input type="button" value="初始化地图" onclick="init()" class="btn btn-success"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="添加新的点" onclick="openModal()" class="btn btn-primary"></td>
+            </tr>
+            <tr>
+              <td><input type="button" value="添加新的边" onclick="open_edge_Modal()" class="btn btn-warning"></td>
+            </tr>
+            <tr><input type="button" value="返回" onclick="location.href='menu.html'"></tr>
+        </table>
+    </div>
+  <!-- 弹窗 -->
+  <div id="myModal">
+    <form id="myForm">
+      <label for="new_place">添加新地点:</label>
+      <input type="text" id="new_place" name="new_place" required><br><br>
+      <input type="submit" value="添加">
+    </form>
+    <button onclick="closeModal()">关闭</button>
+  </div>
+
+  <div id="my_edge_Modal">
+    <form id="my_edge_Form">
+      <label for="new_place">添加新边:</label><br>
+      <label for="start_point">第一个点：</label>
+      <input type="text" name="start_point" id="start_point" placeholder="请在此输入边的第一个点"><br>
+      <label for="end_point">第二个点：</label>
+      <input type="text" name="end_point" id="end_point" placeholder="请在此输入边的第二个点"><br>
+      <label for="weight">权值：</label>
+      <input type="text" id="new_edge" name="new_edge" required placeholder="请在此输入权值（道路长）"><br>
+      <input type="submit" value="添加">
+    </form>
+    <button onclick="close_edge_Modal()">关闭</button>
+  </div>
+</body>
+<script src="./jquery_min_3.7.1.js"></script>
+<script src="./mapinit.js"></script>
+</html>
